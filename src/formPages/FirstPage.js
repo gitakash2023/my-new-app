@@ -10,7 +10,7 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import { setOption, selectOption } from '../redux/slices/optionSlice';
-hello
+
 const options = ['CWSMOBILEIDPADAPTER', 'CWSWEBIDPADAPTER'];
 
 export default function FirstPage() {
