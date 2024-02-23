@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 export default function Form() {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const options = ['CWSMOBILEIDPADAPTER', 'CWSWEBIDPADAPTER'];
  
   const fetchApiData = async (apiKey) => {
@@ -112,12 +112,8 @@ export default function Form() {
        vsid
       </Typography>
       <select>
-        {data.map((item) => (
-          <option key={item.id} value={item.value}>
-            {item.label}
-          </option>
-        ))}
-      </select>
+    ${data.vertualEntityIds.map(item => `<option value="${item}">${item}</option>`).join('\n')}
+  </select>
     </React.Fragment>
   );
 }
