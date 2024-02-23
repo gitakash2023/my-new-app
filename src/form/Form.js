@@ -114,7 +114,10 @@ export default function Form() {
       <Typography variant="h6" gutterBottom>
        vsid
       </Typography>
-      <select onChange={onClickOnvsId}>
+     { data.vertualEntityIds.map(item => item)}
+     { data.fields.map(item => item)}
+
+      {/* <select onChange={onClickOnvsId}>
   {data && data.vertualEntityIds.map(item => (
     <option key={item} value={item}>
       {item}
@@ -133,7 +136,7 @@ export default function Form() {
             ))}
           </form>
         </React.Fragment>
-      )}
+      )} */}
     </React.Fragment>
   );
 }
