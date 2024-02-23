@@ -47,6 +47,9 @@ export default function Form() {
   const handleClose = (event) => {
     setOpen(false);
   };
+  const onClickOnvsId=()=>{
+
+  }
  
   return (
     <React.Fragment>
@@ -111,9 +114,26 @@ export default function Form() {
       <Typography variant="h6" gutterBottom>
        vsid
       </Typography>
-      <select>
-    ${data.vertualEntityIds.map(item => `<option value="${item}">${item}</option>`).join('\n')}
-  </select>
+      <select onChange={onClickOnvsId}>
+  {data && data.vertualEntityIds.map(item => (
+    <option key={item} value={item}>
+      {item}
+    </option>
+  ))}
+</select>
+ {data && (
+        <React.Fragment>
+          <h2>Form Fields</h2>
+          <form>
+            {data.fields.map((fieldName, index) => (
+              <div key={index}>
+                <label>{fieldName}</label>
+                <input type="text" name={fieldName} />
+              </div>
+            ))}
+          </form>
+        </React.Fragment>
+      )}
     </React.Fragment>
   );
 }
